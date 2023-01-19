@@ -3,6 +3,7 @@ import os
 
 pathname = r"C:\Users\USER03-60\Downloads\PracticaSIG2"
 
+
 # print pathname
 # print (os.listdir(pathname))
 # print (len(pathname))
@@ -16,10 +17,10 @@ pathname = r"C:\Users\USER03-60\Downloads\PracticaSIG2"
 #
 # print substring in output
 
-line = "asfasfasf,dsadasddas,dasdsa"
-print line
-line = line.replace(",", ".")
-print line
+# line = "asfasfasf,dsadasddas,dasdsa"
+# print line
+# line = line.replace(",", ".")
+# print line
 
 
 def remove_accent(input_string):
