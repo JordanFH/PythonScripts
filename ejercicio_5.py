@@ -25,12 +25,12 @@ rows = arcpy.UpdateCursor(ruta)
 
 print "-----------------------"
 
-with arcpy.da.UpdateCursor(ruta, "Referencia") as cursor:
+with arcpy.da.UpdateCursor(ruta, ("FID", "Referencia", "Suma")) as cursor:
     for row in cursor:
-        row[0] = 321
+        row[2] = row[0] + row[1]
         cursor.updateRow(row)
-        print row[0]
+        print row[2]
 
 # print ruta
-# arcpy.management.AddField(ruta, fieldName, "LONG")
-arcpy.CalculateField_management(ruta, fieldName, exp, "PYTHON")
+arcpy.management.AddField(ruta, "Suma", "LONG")
+# arcpy.CalculateField_management(ruta, fieldName, exp, "PYTHON")
